@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <script>
+        var quebrada = false; // Se eu colocar true ja não funciona os códigos abaixo.
+        function Lampada(tipo) {
+            if (!quebrada) { // Se eu rancar o ! ja nao funciona os códigos abaixo tbm.
+                document.getElementById("luz").src = "" + tipo + ".jpg"; // Se eu mudar o (+) e colocar a (,) a imagem ira sumir. 
+                if (tipo == 'lampada-quebrada') {
+                    quebrada = true; // Se eu por false e clicar para quebrar e sair com o mouse em cima da imagem ela reseta sozinha, sem precisar do F5. 
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+        <h1>Acenda a Lampada</h1>
+    <img src="lampada-apagada.jpg" 
+    id="luz" 
+    onmousemove="Lampada('lampada-acesa')" 
+    onmouseout="Lampada('lampada-apagada')" 
+    onclick="Lampada('lampada-quebrada')" />
+</body>
+</html>
