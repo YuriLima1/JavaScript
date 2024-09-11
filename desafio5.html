@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<head>
+    <title>Desafio 5</title>
+    <script lang="javascript">
+        function botao(){
+        var medida, km, hm, dam, dm, cm, mm
+            medida = Number(prompt("Digite uma distância em metros (m)"));
+            
+            km = medida / 1000;
+            hm = medida / 100;
+            dam = medida / 10;
+            dm = medida * 10;
+            cm = medida * 100;
+            mm = medida * 1000;
+
+            document.getElementById("valoremmetros").innerHTML = "<h1>A distância de " + medida + " metros, corresponde a...</h1>";
+            document.getElementById("valores").innerHTML = 
+            `<p>
+                ${km} em (Km) <br>
+                ${hm} em (Hm) <br>
+                ${dam} em (Dam) <br>
+                ${dm} em (dm) <br>
+                ${cm} em (cm) <br>
+                ${mm} em (mm) <br>
+            </p>;` 
+
+            }
+    
+    </script>
+</head>
+<body>
+    <style>
+        button {
+            padding: 15px;
+        }
+        h1, p {
+            font-family: Arial;
+        }
+    </style>
+
+    <h1>Conversor de Medidas 😁</h1>
+    <button onclick="botao(this)">Converter</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <p id="valoremmetros"></p>
+    <p id="valores"></p>
+</body>
+</html>

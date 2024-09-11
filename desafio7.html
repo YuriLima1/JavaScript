@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<head>
+    <title>Desafio 7</title>
+    <script lang="javascript">
+        function botao(){
+        var dolar, carteira, dolarcotacao;
+
+            dolarcotacao = 5.65;
+            carteira = Number(prompt("Quantos R$ você tem na carteira ?"));
+            
+           dolar = dolarcotacao / carteira;
+           
+            document.getElementById("dolar").innerHTML = 
+            `<p>
+                Você tem ${dolar} US$
+            </p>`;
+            
+            }
+    
+    </script>
+</head>
+<body>
+    <style>
+        button {
+            padding: 15px;
+        }
+        h1, p {
+            font-family: Arial;
+        }
+    </style>
+
+    <h1>Conversor R$ ⭢ US$ 😁</h1>
+    <button onclick="botao()">Converter</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <p id="dolar"></p>
+</body>
+</html>

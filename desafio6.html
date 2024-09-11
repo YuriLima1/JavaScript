@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<head>
+    <title>Desafio 6</title>
+    <script lang="javascript">
+        function botao(){
+        var celsius, Kelvin, Fahrenheit
+            celsius = Number(prompt("Digite uma temperatura em °C (Celsius)"));
+            
+            Kelvin = celsius + 273.15;
+            Fahrenheit = (celsius * 9 / 5) + 32;
+           
+            document.getElementById("temperaturaemcelsius").innerHTML = "<h1>A temperatura de " + celsius + ", corresponde a...</h1>";
+            document.getElementById("temperaturas").innerHTML = 
+            `<p>
+                ${Kelvin}°K (Kelvin) <br>
+                ${Fahrenheit}°FK (Fahrenheit) <br> 
+            </p>`;
+            
+            }
+    
+    </script>
+</head>
+<body>
+    <style>
+        button {
+            padding: 15px;
+        }
+        h1, p {
+            font-family: Arial;
+        }
+    </style>
+
+    <h1>Conversor de Temperaturas 😁</h1>
+    <button onclick="botao(this)">Converter</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <p id="temperaturaemcelsius"></p>
+    <p id="temperaturas"></p>
+</body>
+</html>
