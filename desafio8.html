@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<head>
+    <title>Desafio 8</title>
+    <script lang="javascript">
+        function botao(){
+        var produto, preco, desconto, resultado
+
+            produto = prompt("Qual é o produto que você está comprando ?");
+            preco = Number(prompt("Qual é o preço de " + produto + " ?"));
+
+            desconto = preco * 0.10;
+            resultado = preco - desconto;
+            
+            document.getElementById("produtoemdesconto").innerHTML = "<h1>Calculando desconto de 10% para " + produto + "</h1>";
+            document.getElementById("desconto").innerHTML = 
+            `<p>
+                O preço original era RS$ ${preco}. <br>
+                Você acaba de ganhar R$ ${desconto} de desconto (-10%). <br> 
+                No fim, você vai pagar R$ ${resultado} no produto ${produto}. <br>
+            </p>`;
+            
+            }
+    
+    </script>
+</head>
+<body>
+    <style>
+        button {
+            padding: 15px;
+            background-color: rgb(0, 255, 55);
+            border: 2px solid;
+            border-radius: 10px;
+            
+        }
+        h1, p {
+            font-family: Arial;
+        }
+        body {
+            background-color: rgb(14, 88, 4);
+        }
+    </style>
+
+    <h1>Calcular Desconto 💚🐷</h1>
+    <button onclick="botao()">Desconto de 10%</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <p id="produtoemdesconto"></p>
+    <p id="desconto"></p>
+</body>
+</html>
