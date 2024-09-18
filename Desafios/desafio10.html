@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<head>
+    <title>Desafio 10</title>
+    <script lang="javascript">
+        function Bhaskara() {
+            var a, b, c, bhaskara
+
+                a = Number(prompt("Digite o valor de a:"));
+
+                b = Number(prompt("Digite o valor de b:"));
+
+                c = Number(prompt("Digite o valor de c:"));
+
+                bhaskara = (b ** 2) - 4 * a * c;
+                document.getElementById("ResolvendoBhaskara").innerHTML = `Resolvendo Bhaskara`;
+                document.getElementById("bhaskara").innerHTML =
+                `<p>
+                    A equação atual é ${a}x² + ${b}x + ${c} = 0 <br>
+                    O valor calculado foi Δ = ${bhaskara} <br>
+                </p>`;
+
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        button {
+            padding: 15px;
+            background-color: rgb(0, 255, 55);
+            border: 2px solid;
+            border-radius: 10px;
+
+        }
+
+        h1,
+        p {
+            font-family: Arial;
+        }
+
+        body {
+            background-color: rgb(14, 88, 4);
+        }
+    </style>
+
+    <h1>Resolvendo Bhaskara 💚🐷</h1>
+    <button onclick="Bhaskara()">Calcular</button>
+    <p>Considerando uma equação no formato ax² + bx + c = 0, aperte <br>
+    o botão acima para calcular o valor de Δ.</p>
+    <h1 id="ResolvendoBhaskara"></h1>
+    <p id="bhaskara"></p>
+</body>
+
+</html>

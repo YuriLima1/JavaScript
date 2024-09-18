@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<head>
+    <title>Desafio 9</title>
+    <script lang="javascript">
+        function reajuste() {
+            var funcionario, salario, reajuste, aumento, porcentagem
+
+            funcionario = prompt("Qual é o nome do funcionário ?");
+            salario = Number(prompt("Qual é o salário de " + funcionario + " ?"));
+            porcentagem = Number(prompt("O salário de " + funcionario + " vai ser reajustado em qual porcentagem ?"));
+
+            aumento = salario * (porcentagem / 100);
+            reajuste = salario + aumento;
+
+            var valores = `<h1>${funcionario} recebeu um aumento salarial!</h1><br>
+                  O salário atual era R$ ${salario}<br>
+                  Com um aumento de ${porcentagem}%, o salário vai aumentar R$ ${aumento} no próximo mês.<br>
+                  E a partir daí, ${funcionario} vai passar a ganhar R$ ${reajuste}`;
+
+            document.getElementById("valoresReajuste").innerHTML = valores;
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <style>
+        button {
+            padding: 15px;
+            background-color: rgb(0, 255, 55);
+            border: 2px solid;
+            border-radius: 10px;
+        }
+
+        h1, p {
+            font-family: Arial;
+        }
+
+        body {
+            background-color: rgb(14, 88, 4);
+        }
+    </style>
+
+    <h1>Reajuste Salarial 💚🐷</h1>
+    <button onclick="reajuste()">Reajustar Salário</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <p id="valoresReajuste"></p>
+</body>
+</html>

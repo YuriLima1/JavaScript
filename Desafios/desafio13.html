@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<head>
+    <title>Desafio 13</title>
+    <script lang="javascript">
+        function media() {
+            var nome, nota1, nota2, media;
+
+            nome = prompt("Qual é o nome do aluno?");
+            nota1 = Number(prompt("Primeira nota de " + nome));
+            nota2 = Number(prompt("Segunda nota de " + nome));
+
+            media = (nota1 + nota2) / 2;
+
+            if (media >= 5) {
+                document.getElementById("analise").innerHTML = `Analisando a situação de ` + nome;
+                document.getElementById("suaMedia").innerHTML = `Com as notas 8,5 e 5, a media é ${media}`;
+                document.getElementById("situacaoAPRO").innerHTML = `Com media acima de 6,0, o aluno esta <strong>APROVADO</strong>`;
+            } else if (media <= 5 && media >= 3) {
+                document.getElementById("analise").innerHTML = `Analisando a situação de ` + nome;
+                document.getElementById("suaMedia").innerHTML = `Com as notas 8,5 e 5, a media é ${media}`;
+                document.getElementById("situacaoRECU").innerHTML = `Com media entre 3,0 e 6,0, o aluno esta <strong>RECUPERAÇÃO</strong>`;
+            } else {
+                document.getElementById("analise").innerHTML = `Analisando a situação de ` + nome;
+                document.getElementById("suaMedia").innerHTML = `Com as notas 2,5 e 3, a media é ${media}`;
+                document.getElementById("situacaoREPRO").innerHTML = `Com media abaixo de 3,0, o aluno esta <strong>REPROVADO</strong>`;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        button {
+            padding: 15px;
+            background-color: rgb(0, 255, 55);
+            border: 2px solid;
+            border-radius: 10px;
+        }
+
+        h1,
+        p {
+            font-family: Arial;
+        }
+
+        #situacaoAPRO strong {
+            background-color: rgb(116, 255, 123);
+        }
+
+        #situacaoRECU strong {
+            background-color: rgb(237, 253, 93);
+        }
+
+        #situacaoREPRO strong {
+            background-color: rgb(253, 104, 104);
+        }
+
+        body {
+            background-color: rgb(14, 88, 4);
+        }
+    </style>
+
+    <h1>Situação do Aluno 💚🐷</h1>
+    <button onclick="media()">Entrar com as notas</button>
+    <p>Clique no botão acima para informar as notas do aluno</p>
+    <h1 id="analise"></h1>
+    <p id="suaMedia"></p>
+    <p id="situacaoAPRO"></p>
+    <p id="situacaoRECU"></p>
+    <p id="situacaoREPRO"></p>
+</body>
+
+</html>
