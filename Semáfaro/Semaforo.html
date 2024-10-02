@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,80 @@
     <link rel="shortcut icon" href="multimidia/IconSemaforo.png" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css">
 </head>
+
+<style>
+    body {
+        background-image: url("multimidia/FundoDesfocado.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+
 <body>
-    
+        <div class="semaforo">
+            <img src="multimidia/semaforodesligado.png" alt="Semáforo" id="ImagemSemaforo">
+        </div>
+
+        <div class="botoes">
+            <button onclick="mudarLuz('red')">Vermelho</button>
+            <button onclick="mudarLuz('yellow')">Amarelo</button>
+            <button onclick="mudarLuz('green')">Verde</button>
+            <button onclick="Automatico()">Automático</button>
+            <button onclick="Desligar('desligar')">Desligar</button>
+        </div>
+
+        <script>
+            let intervalo;
+            let automaticoAtivo = false;
+
+            function mudarLuz(corAtiva) {
+                if (automaticoAtivo) {
+                    clearInterval(intervalo);
+                    automaticoAtivo = false;
+                }
+
+                const ImagemSemaforo = document.getElementById('ImagemSemaforo');
+                if (corAtiva === 'red') {
+                    ImagemSemaforo.src = "multimidia/semaforoVermelho.png";
+                }
+                else if (corAtiva === 'yellow') {
+                    ImagemSemaforo.src = "multimidia/semaforoAmarelo.png";
+                }
+                else if (corAtiva === 'green') {
+                    ImagemSemaforo.src = "multimidia/semaforoVerde.png";
+                }
+            }
+
+            function Desligar() {
+                if (Automatico) {
+                    clearInterval(intervalo);
+                    Automatico = false;
+                }
+                document.getElementById('ImagemSemaforo').src = "multimidia/semaforoDesligado.png";
+            }
+
+            function Automatico() {
+                automaticoAtivo = true;
+                let corAtual = 'red';
+                mudarLuz(corAtual);
+
+                intervalo = setInterval(() => {
+                    if (corAtual === 'red') {
+                        mudarLuz('yellow');
+                        corAtual = 'yellow';
+                    }
+                    else if (corAtual === 'yellow') {
+                        mudarLuz('green');
+                        corAtual = 'green';
+                    }
+                    else {
+                        mudarLuz('red');
+                        corAtual = 'red';
+                    }
+                }, 3000);
+            }
+        </script>
 </body>
+
 </html>
